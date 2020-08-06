@@ -1,0 +1,42 @@
+ARG NCEP_INTERNAL
+FROM $NCEP_INTERNAL
+
+LABEL maintainer="Jebb Q. Stewart <jebb.q.stewart@noaa.gov>"
+
+ARG UFS_VERSION=develop
+
+ENV MAKEFLAGS="-j 8"
+ENV CC=mpicc
+ENV CXX=mpicxx
+ENV F77=mpifort
+ENV F90=mpifort
+ENV FC=mpifort
+ENV CMAKE_C_COMPILER=gcc
+ENV CMAKE_CXX_COMPILER=g++
+ENV CMAKE_Fortran_COMPILER=gfortran
+ENV CMAKE_Platform=linux.gnu
+
+ENV NETCDF=/usr/local
+ENV NCEPLIBS_DIR=/usr/local/nceplibs
+ENV ESMFMKFILE=/usr/local/lib/esmf.mk
+ENV NEMS_COMPILER=gnu
+
+ENV nemsio_DIR=$NCEPLIBS_DIR/nemsio-2.5.1/
+ENV bacio_DIR=${NCEPLIBS_DIR}/bacio-2.4.0/
+ENV sp_DIR=${NCEPLIBS_DIR}/sp-2.3.0/
+ENV w3emc_DIR=${NCEPLIBS_DIR}/w3emc-2.7.0/
+ENV w3nco_DIR=${NCEPLIBS_DIR}/w3nco-2.4.0/
+ENV sigio_DIR=${NCEPLIBS_DIR}/sigio-2.3.0/
+
+ENV COMPILER=gnu
+
+# find suites in ufs-weather-model/FV3/ccpp/suites
+ENV CCPP_SUITES="FV3_GFS_v15p2,FV3_GFS_2017_coupled,FV3_GFS_2017_gfdlmp,FV3_GFS_2017,FV3_GFS_v15plus,FV3_GFS_v16beta,FV3_GSD_v0"
+
+ENV BUILD_SHARED_LIBS=OFF
+
+RUN export LANG=C \
+    && git clone -b ${UFS_VERSION} https://github.com/ufs-community/ufs-weather-model \
+    && cd ufs-weather-model \
+    && git submodule update --init --recursive \
+    && ./build.sh

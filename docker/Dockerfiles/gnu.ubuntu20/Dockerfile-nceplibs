@@ -1,0 +1,23 @@
+ARG NCEP_EXTERNAL
+FROM ${NCEP_EXTERNAL}
+
+LABEL maintainer="Jebb Q. Stewart <jebb.q.stewart@noaa.gov>"
+
+ARG NETCDF=/usr/local
+ENV NETCDF=$NETCDF
+ENV ESMFMKFILE=/usr/local/lib64/esmf.mk
+ARG NCEPLIBS_VERSION=develop
+
+RUN export FC=gfortran \
+    && export CC=gcc \
+    && export LANG=C \
+    && export LDFLAGS="-L/usr/local/lib64" \
+    && git clone -b ${NCEPLIBS_VERSION} https://github.com/NOAA-EMC/NCEPLIBS.git \
+    && cd NCEPLIBS \
+    && git submodule update --init --recursive \
+    && mkdir build \
+    && cd build \
+    && cmake -DCMAKE_INSTALL_PREFIX=/usr/local/nceplibs -DSTATIC_IS_DEFAULT=ON .. \
+    && make -j8 \
+    && cd ../.. \
+    && rm -rf NCEPLIBS 

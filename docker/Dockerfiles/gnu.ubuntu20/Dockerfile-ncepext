@@ -1,0 +1,58 @@
+FROM ubuntu:20.04
+
+LABEL maintainer="Jebb Q. Stewart <jebb.q.stewart@noaa.gov>"
+
+ENV BUILD_SHARED_LIBS=OFF
+
+RUN apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        ca-certificates \
+        gcc \
+        g++ \
+        gfortran \
+        make \
+        file \
+        m4 \
+        ksh \
+        python \
+        perl \
+        libxml2-dev \
+        libssl-dev \
+        rsync \
+        git \
+        wget \
+        vim \
+    && rm -rf /var/lib/apt/lists/*
+
+ARG NCEPLIBS_VERSION=develop
+
+ENV ENV="/etc/profile"
+
+# First build and install CMAKE
+RUN git clone -b ${NCEPLIBS_VERSION} https://github.com/NOAA-EMC/NCEPLIBS-external.git \
+    && cd NCEPLIBS-external \
+    && git submodule update --init --recursive \
+    && cd cmake-src \
+    && ./bootstrap --prefix=/usr/local \
+    && make -j8 && make install \
+# Now build the remaining NCEPLIBS-external
+    && export LANG=C \
+    && export PATH=/usr/local/bin:${PATH} \
+    && export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:${LD_LIBRARY_PATH} \
+    && export CC=gcc \
+    && export FC=gfortran \
+    && cd /NCEPLIBS-external \
+    && mkdir build \
+    && cd build \
+    && export MAKEFLAGS="-j 8" \
+    && cmake -DCMAKE_INSTALL_PREFIX=/usr/local/ -DSTATIC_IS_DEFAULT=ON .. \
+    && make \
+    && cd ../.. \
+# Clean up to reduce image size
+    && rm -rf NCEPLIBS-external 
+
+# setup environment for future files
+RUN echo "export PATH=/usr/local/bin:${PATH}"" >> /etc/profile.d/ufs.sh \
+    && echo "export LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib:${LD_LIBRARY_PATH}" >> /etc/profile.d/ufs.sh \
+    && chmod a+x /etc/profile.d/ufs.sh
+

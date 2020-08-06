@@ -1,0 +1,47 @@
+ARG UFS_CONTAINER
+FROM $UFS_CONTAINER as ufs
+
+FROM ubuntu:20.04 as installer
+
+LABEL maintainer="Jebb Q. Stewart <jebb.q.stewart@noaa.gov>"
+
+# install runtime dependencies
+RUN apt-get update -y && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        ca-certificates \
+        file \
+        ksh \
+        python \
+        perl \
+        libxml2 \
+        libgomp1 \
+        libquadmath0 \
+        libgfortran5 \
+        openssl \
+        rsync \
+        git \
+        wget \
+        vim \
+        wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# copy runtime components from UFS container
+COPY --from=ufs /usr/local/lib/libmpifort.so.12 /usr/local/lib/
+COPY --from=ufs /usr/local/lib/libmpi.so.12 /usr/local/lib/
+COPY --from=ufs /usr/local/bin/mpiexec /usr/local/bin/
+COPY --from=ufs /usr/local/bin/mpirun /usr/local/bin/
+COPY --from=ufs /usr/local/bin/mpivars /usr/local/bin/
+COPY --from=ufs /usr/local/bin/hydra_pmi_proxy /usr/local/bin/
+COPY --from=ufs /usr/local/bin/hydra_persist /usr/local/bin/
+COPY --from=ufs /usr/local/bin/hydra_nameserver /usr/local/bin/
+COPY --from=ufs /ufs-weather-model/ufs_weather_model /opt/ufs-weather-model/ufs_weather_model
+
+# ensure libraries are picked up at run time
+RUN echo "/usr/local/lib" >> /etc/ld.so.conf.d/ufs.conf \
+    && ldconfig
+
+# ensure env is setup to run UFS
+RUN echo "ulimit -s unlimited" >> /etc/profile.d/ufs.sh \
+    chmod a+x /etc/profile.d/ufs.sh
+
+ENV ENV="/etc/profile"
