@@ -34,8 +34,21 @@ Once you have completed the build process you are able to run the UFS Weather Mo
 `
 docker run --rm -it -v /data:/data org/ufs-ubuntu20-develop
 `
-> Important
-> 
+
+3. Inside the container run the ufs-weather-model
+
+`
+cd /data/simple-test-case
+
+mpiexec -np 8 /opt/ufs-weather-model/ufs_weather_model
+`
+
+4. _Optional_ -- Before running the model, change the number of threads
+
+`
+export OMP_NUM_THREADS=2
+`
+
 #### Description of Arguments
 
 *--rm*
@@ -45,7 +58,7 @@ docker run --rm -it -v /data:/data org/ufs-ubuntu20-develop
 : Runs the container in an interactive mode with terminal access
 
 *-v /data:/data*
-: Mounts your local directory /data as /data within the running image.  This is your <working_directory> where you downloaded the simple test case data
+: Mounts your local directory /data as /data within the running image.  This is your <working_directory> where you downloaded and unpacked the simple test case data
 
 *org/ufs-ubuntu20-develop*
 : The name of the container you wish to run
@@ -54,7 +67,7 @@ docker run --rm -it -v /data:/data org/ufs-ubuntu20-develop
 
 To build the UFS Weather Model using GNU Compilers based on Ubuntu 20.04 image
 
-### Building NCEPLIBS-External {#u20-nceplibs-internal}
+### Building NCEPLIBS-External {#u20-nceplibs-interal}
 
 within the docker directory run the following command:
 
@@ -83,7 +96,7 @@ Upon success, this will generate a Docker image with the tag _org/ufs-ubuntu20-n
 *.*
 : Build context to use, a single period '.' means use the current directory
 
-### Building NCEPLIBS-Internal {#u20-nceplibs-internal}
+### Building NCEPLIBS-Internal {#u20-nceplibs-interal}
 
 within the docker directory run the following command:
 
@@ -117,7 +130,7 @@ Upon success, this will generate a Docker image with the tag _org/ufs-ubuntu20-n
 within the docker directory run the following command:
 
 `
-docker build --rm --build-arg --build-arg NCEP_INTERNAL="org/ufs-ubuntu20-nceplibs:latest" --build-arg UFS_VERSION=develop -t org/ufs-ubuntu20-develop-full -f Dockerfiles/gnu.ubuntu20/Dockerfile-ufs .
+docker build --rm --build-arg NCEP_INTERNAL="org/ufs-ubuntu20-nceplibs:latest" --build-arg UFS_VERSION=develop -t org/ufs-ubuntu20-develop-full -f Dockerfiles/gnu.ubuntu20/Dockerfile-ufs .
 ` 
 
 Upon success, this will generate a Docker image with the tag _org/ufs-ubuntu20-develop-full_
