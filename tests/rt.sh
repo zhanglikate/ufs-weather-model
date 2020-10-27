@@ -213,10 +213,13 @@ elif [[ $MACHINE_ID = hera.* ]]; then
 
 #  ACCNR=fv3-cpu
   PARTITION=
-  dprefix=/scratch2/BMC/wrfruc/Samuel.Trahan/perturb-smoke
-  DISKNM=$dprefix/RT
-  STMP=$dprefix/stmp
-  PTMP=$dprefix/ptmp
+  dprefix=/scratch1/NCEPDEV
+  DISKNM=$dprefix/nems/emc.nemspara/RT
+  STMP=$dprefix/stmp4
+  PTMP=$dprefix/stmp2
+
+  # Until we find a better place, the chemistry test case is here:
+  export RTPWD=/scratch2/BMC/wrfruc/Samuel.Trahan/perturb-smoke/RT/NEMSfv3gfs/develop-20200929/INTEL/
 
   SCHEDULER=slurm
   cp fv3_conf/fv3_slurm.IN_hera fv3_conf/fv3_slurm.IN
