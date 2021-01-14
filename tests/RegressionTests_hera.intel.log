@@ -1,9 +1,9 @@
-Wed Jan 13 22:27:06 UTC 2021
+Wed Jan 13 23:57:48 UTC 2021
 Start Regression test
 
 
 baseline dir = /scratch2/BMC/wrfruc/Samuel.Trahan/perturb-smoke/RT/NEMSfv3gfs/develop-20200929/INTEL//fv3_gfdlmp_gsd_chem_ccpp
-working dir  = /scratch1/NCEPDEV/stmp2/Samuel.Trahan/FV3_RT/rt_273668/fv3_ccpp_gfdlmp_gsd_chem_prod
+working dir  = /scratch1/NCEPDEV/stmp2/Samuel.Trahan/FV3_RT/rt_52240/fv3_ccpp_gfdlmp_gsd_chem_prod
 Checking test 001 fv3_ccpp_gfdlmp_gsd_chem results ....
  Comparing atmos_4xdaily.tile1.nc .........OK
  Comparing atmos_4xdaily.tile2.nc .........OK
@@ -51,7 +51,7 @@ Test 001 fv3_ccpp_gfdlmp_gsd_chem PASS
 
 
 baseline dir = /scratch2/BMC/wrfruc/Samuel.Trahan/perturb-smoke/RT/NEMSfv3gfs/develop-20200929/INTEL//fv3_gfdlmp_gsd_chem_sppt_ccpp
-working dir  = /scratch1/NCEPDEV/stmp2/Samuel.Trahan/FV3_RT/rt_273668/fv3_ccpp_gfdlmp_gsd_chem_sppt_prod
+working dir  = /scratch1/NCEPDEV/stmp2/Samuel.Trahan/FV3_RT/rt_52240/fv3_ccpp_gfdlmp_gsd_chem_sppt_prod
 Checking test 002 fv3_ccpp_gfdlmp_gsd_chem_sppt results ....
  Comparing atmos_4xdaily.tile1.nc .........OK
  Comparing atmos_4xdaily.tile2.nc .........OK
@@ -99,5 +99,5 @@ Test 002 fv3_ccpp_gfdlmp_gsd_chem_sppt PASS
 
 
 REGRESSION TEST WAS SUCCESSFUL
-Wed Jan 13 22:38:12 UTC 2021
-Elapsed time: 00h:11m:08s. Have a nice day!
+Thu Jan 14 00:08:53 UTC 2021
+Elapsed time: 00h:11m:07s. Have a nice day!
