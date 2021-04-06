@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 stochastic test
+#  FV3 CCPP stochastic test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 stochastic results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP stochastic results with previous trunk version"
 
 export CNTL_DIR=fv3_stochy
 
@@ -82,4 +82,8 @@ export SHUM=0.003
 export SPPT=0.2
 export DT_ATMOS=600
 export FHMAX=12
+
+export FV3_RUN=control_run.IN
+export CCPP_SUITE=FV3_GFS_2017
+export INPUT_NML=control.nml.IN
 

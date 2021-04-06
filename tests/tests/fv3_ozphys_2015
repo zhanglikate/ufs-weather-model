@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 ozone physics 2015 test
+#  FV3 CCPP ozone physics 2015 test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 ozone physics 2015 results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP ozone physics 2015 results with previous trunk version"
 
 export CNTL_DIR=fv3_ozphys_2015
 
@@ -74,7 +74,9 @@ export LIST_FILES="atmos_4xdaily.tile1.nc \
 
 export_fv3
 
-export FV3_RUN=fv3_run.IN
+export FV3_RUN=control_run.IN
+export CCPP_SUITE=FV3_GFS_2017_ozphys_2015
+export INPUT_NML=control.nml.IN
 
 export OZ_PHYS_OLD=.F.
 export OZ_PHYS_NEW=.T.

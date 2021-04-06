@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 Gaussian grid netcdf output test
+#  FV3 CCPP Gaussian grid netcdf output test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 Gaussian grid netcdf output results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP Gaussian grid netcdf output results with previous trunk version"
 
 export CNTL_DIR=fv3_wrtGauss_netcdf
 
@@ -56,4 +56,8 @@ export_fv3
 
 export OUTPUT_GRID="'gaussian_grid'"
 export OUTPUT_FILE="'netcdf'"
+
+export FV3_RUN=control_run.IN
+export CCPP_SUITE=FV3_GFS_2017
+export INPUT_NML=control.nml.IN
 

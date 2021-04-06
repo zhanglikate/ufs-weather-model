@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 GFDL-MPrad test
+#  FV3 CCPP GFDL-MPrad test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 GFDL-MP radiation interaction option with the control"
+export TEST_DESCR="Compare FV3 CCPP GFDL-MP radiation interaction option with the control"
 
 export CNTL_DIR=fv3_gfdlmprad
 
@@ -75,6 +75,7 @@ export wav_petlist_bounds="150 191"
 export coupling_interval_sec=3600.0  #coupling time step, want it to be multiple of 1800 and FV3 time step
 export NEMS_CONFIGURE="nems.configure.blocked_atm_wav.IN"
 
+export CCPP_SUITE=FV3_GFS_2017_gfdlmp
 export INPUT_NML=gfdlmp.nml.IN
 export FV3_RUN=gfdlmp_run.IN
 

@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 IAU test
+#  FV3 CCPP IAU test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 IAU results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP IAU results with previous trunk version"
 
 export CNTL_DIR=fv3_iau
 
@@ -86,4 +86,7 @@ export NSTF_NAME=2,0,1,0,5
 export IAU_INC_FILES="fv3_increment.nc"
 export IAU_DRYMASSFIXER=.true.
 
+export FV3_RUN=control_run.IN
+export CCPP_SUITE=FV3_GFS_2017
+export INPUT_NML=control.nml.IN
 

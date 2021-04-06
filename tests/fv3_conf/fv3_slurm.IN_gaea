@@ -8,10 +8,12 @@
 #SBATCH --ntasks=@[TASKS]
 #SBATCH --time=@[WLCLK]
 
-set -ux
+set -eux
+echo -n " $( date +%s )," >  job_timestamp.txt
 
 set +x
 source ./module-setup.sh
+source /lustre/f2/pdata/esrl/gsd/contrib/lua-5.1.4.9/init/init_lmod.sh
 module use $( pwd -P )
 module load modules.fv3
 set -x
@@ -29,5 +31,4 @@ sync && sleep 1
 srun ./fv3.exe
 
 echo "Model ended:    " `date`
-
-exit
+echo -n " $( date +%s )," >> job_timestamp.txt

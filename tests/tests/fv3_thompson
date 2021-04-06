@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 Thompson MP test
+#  FV3 CCPP Thompson MP test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 Thompson MP results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP Thompson MP results with previous trunk version"
 
 export CNTL_DIR=fv3_thompson
 
@@ -58,29 +58,42 @@ export LIST_FILES="atmos_4xdaily.tile1.nc \
                    RESTART/fv_tracer.res.tile4.nc \
                    RESTART/fv_tracer.res.tile5.nc \
                    RESTART/fv_tracer.res.tile6.nc \
-                   RESTART/sfc_data.tile1.nc \
-                   RESTART/sfc_data.tile2.nc \
-                   RESTART/sfc_data.tile3.nc \
-                   RESTART/sfc_data.tile4.nc \
-                   RESTART/sfc_data.tile5.nc \
-                   RESTART/sfc_data.tile6.nc \
                    RESTART/phy_data.tile1.nc \
                    RESTART/phy_data.tile2.nc \
                    RESTART/phy_data.tile3.nc \
                    RESTART/phy_data.tile4.nc \
                    RESTART/phy_data.tile5.nc \
-                   RESTART/phy_data.tile6.nc"
-
+                   RESTART/phy_data.tile6.nc \
+                   RESTART/sfc_data.tile1.nc \
+                   RESTART/sfc_data.tile2.nc \
+                   RESTART/sfc_data.tile3.nc \
+                   RESTART/sfc_data.tile4.nc \
+                   RESTART/sfc_data.tile5.nc \
+                   RESTART/sfc_data.tile6.nc"
 
 export_fv3
 
-export DT_ATMOS="1200"
+export DT_ATMOS="600"
+export IMP_PHYSICS=8
+export DNATS=0
+export DO_SAT_ADJ=.F.
 export LRADAR=.T.
+export LTAEROSOL=.T.
 
-export INPUT_NML=thompson.nml.IN
-export FV3_RUN=thompson_run.IN
+export FV3_RUN=gsd_run.IN
+export CCPP_SUITE=FV3_GFS_v16_thompson
+export INPUT_NML=gsd.nml.IN
 
+export HYBEDMF=.F.
+export SATMEDMF=.T.
+export DO_MYNNEDMF=.F.
 
-if [[ $MACHINE_ID = cheyenne.intel ]]; then
-  export WLCLK=30
-fi
+export IMFSHALCNV=2
+export IMFDEEPCNV=2
+
+export IAER=5111
+export ICLIQ_SW=2
+export IOVR=3
+
+export LHEATSTRG=.T.
+export DO_TOFD=.T.

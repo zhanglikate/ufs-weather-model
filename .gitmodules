@@ -1,26 +1,46 @@
 [submodule "FV3"]
-	path = FV3
-	#url = https://github.com/NOAA-GSL/fv3atm
-	#branch = gsl/develop-chem
-	url = https://github.com/climbfuji/fv3atm
-	branch = gsl_develop_chem_add_gocart
+  path = FV3
+  #url = https://github.com/NOAA-GSL/fv3atm
+  #branch = gsl/develop-chem
+  url = https://github.com/climbfuji/fv3atm
+  branch = gsl_develop_chem_add_gocart
 [submodule "NEMS"]
-	path = NEMS
-	url = https://github.com/NOAA-EMC/NEMS
-	branch = develop
+  path = NEMS
+  url = https://github.com/NOAA-EMC/NEMS
+  branch = develop
 [submodule "FMS"]
-	path = FMS
-	url = https://github.com/NOAA-GFDL/FMS
-	branch = master
+  path = FMS
+  url = https://github.com/NOAA-GFDL/FMS
+  branch = release/2020.04
 [submodule "WW3"]
-	path = WW3
-	url = https://github.com/NOAA-EMC/WW3
-	branch = develop
+  path = WW3
+  url = https://github.com/NOAA-EMC/WW3
+  branch = develop
 [submodule "stochastic_physics"]
-	path = stochastic_physics
-	url = https://github.com/noaa-psd/stochastic_physics
-	branch = master
+  path = stochastic_physics
+  url = https://github.com/noaa-gsl/stochastic_physics
+  branch = gsl/develop
 [submodule "gocart"]
-	path = gocart
-	url = https://github.com/NOAA-GSL/GOCART
-	branch = gsl/develop-chem
+  path = gocart
+  url = https://github.com/NOAA-GSL/GOCART
+  branch = gsl/develop-chem
+[submodule "CMakeModules"]
+  path = CMakeModules
+  url = https://github.com/NOAA-EMC/CMakeModules
+  branch = develop
+[submodule "CMEPS"]
+  path = CMEPS-interface/CMEPS
+  url = https://github.com/NOAA-EMC/CMEPS.git
+  branch = emc/develop
+[submodule "MOM6"]
+  path = MOM6-interface/MOM6
+  url = https://github.com/NOAA-EMC/MOM6
+  branch = dev/emc
+[submodule "CICE"]
+  path = CICE-interface/CICE
+  url = https://github.com/NOAA-EMC/CICE
+  branch = emc/develop
+[submodule "DATM"]
+  path = DATM
+  url = https://github.com/NOAA-EMC/NEMSdatm
+  branch = develop
