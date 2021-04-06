@@ -18,3 +18,7 @@
 	path = stochastic_physics
 	url = https://github.com/noaa-psd/stochastic_physics
 	branch = master
+[submodule "gocart"]
+	path = gocart
+	url = https://github.com/NOAA-GSL/GOCART
+	branch = gsl/develop-chem
