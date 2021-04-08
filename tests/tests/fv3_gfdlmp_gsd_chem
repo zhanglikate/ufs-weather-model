@@ -1,12 +1,12 @@
 ###############################################################################
 #
-#  FV3 CCPP GFDL-MP test
+#  FV3 GFDL-MP GSD-CHEM test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 CCPP GFDL-MP results with previous trunk version"
+export TEST_DESCR="Compare FV3 GFDL-MP GSD-CHEM results with previous trunk version"
 
-export CNTL_DIR=fv3_gfdlmp_gsd_chem_sppt
+export CNTL_DIR=fv3_gfdlmp_gsd_chem
 
 export LIST_FILES="atmos_4xdaily.tile1.nc \
                    atmos_4xdaily.tile2.nc \
@@ -63,8 +63,7 @@ export WRITE_FSYNCFLAG=.true.
 export TRANS_TRAC=.T.
 export CPLCHM=.T.
 
-export FV3_RUN=ccpp_gfdlmp_run.IN
+export FV3_RUN=gfdlmp_run.IN
 export CCPP_SUITE=FV3_GFS_2017_gfdlmp_gsd_chem
-export CCPP_LIB_DIR=ccpp/lib
-export INPUT_NML=ccpp_gfdlmp_gsd_chem_sppt.nml.IN
+export INPUT_NML=gfdlmp_gsd_chem.nml.IN
 

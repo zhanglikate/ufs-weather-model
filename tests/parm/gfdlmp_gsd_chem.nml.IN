@@ -89,7 +89,7 @@
        hord_mt =  6
        hord_vt =  6
        hord_tm =  6
-       hord_dp =  -6
+       hord_dp =  6
        hord_tr = 8
        adjust_dry_mass = .F.
        consv_te = 1.
@@ -128,8 +128,8 @@
        pdfcld         = .false.
        fhswr          = 3600.
        fhlwr          = 3600.
-       ialb           = 1
-       iems           = 1
+       ialb           = @[IALB]
+       iems           = @[IEMS]
        IAER           = 111
        ico2           = 2
        isubc_sw       = 2

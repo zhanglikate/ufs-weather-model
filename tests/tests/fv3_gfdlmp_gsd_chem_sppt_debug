@@ -1,23 +1,17 @@
 ###############################################################################
 #
-#  FV3 CCPP GFDL-MP test
+#  FV3 GFDL-MP GSD-CHEM SPPT DEBUG test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 CCPP GFDL-MP results with previous trunk version"
+export TEST_DESCR="Compare FV3 GFDL-MP GSD-CHEM SPPT DEBUG results with previous trunk version"
 
-export CNTL_DIR=fv3_gfdlmp_gsd_chem_ca
+export CNTL_DIR=fv3_gfdlmp_gsd_chem_sppt_debug
 
-export LIST_FILES="atmos_4xdaily.tile1.nc \
-                   atmos_4xdaily.tile2.nc \
-                   atmos_4xdaily.tile3.nc \
-                   atmos_4xdaily.tile4.nc \
-                   atmos_4xdaily.tile5.nc \
-                   atmos_4xdaily.tile6.nc \
-                   phyf000.nemsio   \
-                   phyf024.nemsio   \
+export LIST_FILES="phyf000.nemsio   \
+                   phyf006.nemsio   \
                    dynf000.nemsio   \
-                   dynf024.nemsio   \
+                   dynf006.nemsio   \
                    RESTART/coupler.res \
                    RESTART/fv_core.res.nc \
                    RESTART/fv_core.res.tile1.nc \
@@ -55,6 +49,7 @@ export LIST_FILES="atmos_4xdaily.tile1.nc \
 export_fv3
 
 DT_ATMOS="1200"
+export FHMAX=06
 export OUTPUT_GRID="'gaussian_grid'"
 export OUTPUT_FILE="'nemsio'"
 export WRITE_NEMSIOFLIP=.true.
@@ -63,8 +58,7 @@ export WRITE_FSYNCFLAG=.true.
 export TRANS_TRAC=.T.
 export CPLCHM=.T.
 
-export FV3_RUN=ccpp_gfdlmp_run.IN
+export FV3_RUN=gfdlmp_run.IN
 export CCPP_SUITE=FV3_GFS_2017_gfdlmp_gsd_chem
-export CCPP_LIB_DIR=ccpp/lib
-export INPUT_NML=ccpp_gfdlmp_gsd_chem_ca.nml.IN
+export INPUT_NML=gfdlmp_gsd_chem_sppt.nml.IN
 

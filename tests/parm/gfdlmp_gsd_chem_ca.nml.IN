@@ -89,7 +89,7 @@
        hord_mt =  6
        hord_vt =  6
        hord_tm =  6
-       hord_dp =  -6
+       hord_dp =  6
        hord_tr = 8
        adjust_dry_mass = .F.
        consv_te = 1.
@@ -114,6 +114,11 @@
 /
 
 &gfs_physics_nml
+       do_ca          = .true.
+       ca_global_emis = .true.
+       ca_global      = .false.
+       iseed_ca       = 12345
+
        fhzero         = 6.
        ldiag3d        = .false.
        ldiag_ugwp     = @[LDIAG_UGWP]
@@ -128,8 +133,8 @@
        pdfcld         = .false.
        fhswr          = 3600.
        fhlwr          = 3600.
-       ialb           = 1
-       iems           = 1
+       ialb           = @[IALB]
+       iems           = @[IEMS]
        IAER           = 111
        ico2           = 2
        isubc_sw       = 2
@@ -191,9 +196,6 @@
        do_sppt        = @[DO_SPPT]
        do_shum        = @[DO_SHUM]
        do_skeb        = @[DO_SKEB]
-
-       do_sppt_emis   = .true.
-
        fscav_aero   = "sulf:0.2", "bc1:0.2","bc2:0.2","oc1:0.2","oc2:0.2",
        aer_bc_opt     = 1
        aer_ic_opt     = 1
@@ -341,15 +343,6 @@
        LANDICE  = @[LANDICE]
 /
 &nam_stochy
-  lon_s=768
-  lat_s=384
-  ntrunc=382
-  SPPT=0.2
-  SPPT_TAU=21600
-  SPPT_LSCALE=500000
-  SPPT_LOGIT=.TRUE.
-  SPPT_SFCLIMIT=.TRUE.
-  ISEED_SPPT=3
 /
 &nam_sfcperts
 /
