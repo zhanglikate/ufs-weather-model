@@ -247,9 +247,6 @@ elif [[ $MACHINE_ID = hera.* ]]; then
   STMP=$dprefix/stmp4
   PTMP=$dprefix/stmp2
 
-  # Until we find a better place, the chemistry test case is here:
-  export RTPWD=/scratch2/BMC/wrfruc/Samuel.Trahan/perturb-smoke/RT/NEMSfv3gfs/develop-20200929/${RT_COMPILER^^}/
-
   SCHEDULER=slurm
   cp fv3_conf/fv3_slurm.IN_hera fv3_conf/fv3_slurm.IN
   cp fv3_conf/compile_slurm.IN_hera fv3_conf/compile_slurm.IN
