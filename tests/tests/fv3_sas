@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 SAS test
+#  FV3 CCPP SAS test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 SAS results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP SAS results with previous trunk version"
 
 export CNTL_DIR=fv3_sas
 
@@ -62,6 +62,7 @@ export OUTPUT_FILE="'nemsio'"
 export WRITE_NEMSIOFLIP=.true.
 export WRITE_FSYNCFLAG=.true.
 
-export INPUT_NML=gfdlmp.nml.IN
 export FV3_RUN=gfdlmp_run.IN
+export CCPP_SUITE=FV3_GFS_2017_sas
+export INPUT_NML=gfdlmp.nml.IN
 

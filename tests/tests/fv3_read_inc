@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 read_inc test
+#  FV3 CCPP read_inc test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 read_inc results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP read_inc results with previous trunk version"
 
 export CNTL_DIR=fv3_read_inc
 
@@ -85,4 +85,7 @@ export FDIAG=3
 export READ_INCREMENT=.T.
 export NSTF_NAME=2,0,1,0,5
 
+export FV3_RUN=control_run.IN
+export CCPP_SUITE=FV3_GFS_2017
+export INPUT_NML=control.nml.IN
 

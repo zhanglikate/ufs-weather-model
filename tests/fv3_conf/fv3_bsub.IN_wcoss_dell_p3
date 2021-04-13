@@ -11,6 +11,7 @@
 #BSUB -R affinity[core(@[THRD])]
 
 set -eux
+echo -n " $( date +%s )," >  job_timestamp.txt
 
 set +x
 source ./module-setup.sh
@@ -22,10 +23,10 @@ set -x
 echo "Model started:  " `date`
 
 export OMP_NUM_THREADS=@[THRD]
+export OMP_STACKSIZE=512M
 export I_MPI_DEBUG=4
 
 mpirun -l -n @[TASKS] ./fv3.exe
 
 echo "Model ended:    " `date`
-
-exit
+echo -n " $( date +%s )," >> job_timestamp.txt

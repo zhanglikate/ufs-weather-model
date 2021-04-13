@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 cellular automata test
+#  FV3 CCPP control test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 cellular automata results with previous trunk version (sub-grid and global)"
+export TEST_DESCR="Compare FV3 cellular automata results with previous trunk version (sub-grid and global) CCPP"
 
 export CNTL_DIR=fv3_ca
 
@@ -71,11 +71,13 @@ export LIST_FILES="atmos_4xdaily.tile1.nc \
                    RESTART/sfc_data.tile5.nc \
                    RESTART/sfc_data.tile6.nc"
 
-
 export_fv3
+
+export FV3_RUN=control_run.IN
+export CCPP_SUITE=FV3_GFS_2017
+export INPUT_NML=ca.nml.IN
 
 export DO_CA=.T.
 export CA_SGS=.T.
 export CA_GLOBAL=.T.
 export FHMAX=12
-

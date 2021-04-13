@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 satmedmf test
+#  FV3 CCPP satmedmf test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 control with satmedmf on Gaussian grid nemsio output results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP control with satmedmf on Gaussian grid nemsio output results with previous trunk version"
 
 export CNTL_DIR=fv3_satmedmf
 
@@ -63,4 +63,6 @@ export OUTPUT_FILE="'nemsio'"
 export WRITE_NEMSIOFLIP=.true.
 export WRITE_FSYNCFLAG=.true.
 export FV3_RUN=satmedmf_run.IN
+export CCPP_SUITE=FV3_GFS_2017_satmedmf
+export INPUT_NML=control.nml.IN
 

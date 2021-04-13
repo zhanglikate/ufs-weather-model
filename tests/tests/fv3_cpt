@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 CPT test
+#  FV3 CCPP CPT test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 CPT results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP CPT results with previous trunk version"
 
 export CNTL_DIR=fv3_cpt
 
@@ -82,6 +82,7 @@ export NPZP='128'
 
 export INPUT_NML=cpt.nml.IN
 export FV3_RUN=cpt_run.IN
+export CCPP_SUITE=FV3_CPT_v0
 export OUTPUT_GRID="'gaussian_grid'"
 export OUTPUT_FILE="'nemsio'"
 export WRITE_NEMSIOFLIP=.true.

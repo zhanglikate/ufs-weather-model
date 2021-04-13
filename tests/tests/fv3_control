@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 control test
+#  FV3 CCPP control test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 control results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP control results with previous trunk version"
 
 export CNTL_DIR=fv3_control
 
@@ -73,4 +73,9 @@ export LIST_FILES="atmos_4xdaily.tile1.nc \
 
 
 export_fv3
+export RESTART_INTERVAL=12
+
+export FV3_RUN=control_run.IN
+export CCPP_SUITE=FV3_GFS_2017
+export INPUT_NML=control.nml.IN
 

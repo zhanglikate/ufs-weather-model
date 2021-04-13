@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 GFDL-MPrad gravity wave drag test
+#  FV3 CCPP GFDL-MPrad gravity wave drag test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 GFDL-MP radiation interaction option and gravity wave drag with the control"
+export TEST_DESCR="Compare FV3 CCPP GFDL-MP radiation interaction option and gravity wave drag with the control"
 
 export CNTL_DIR=fv3_gfdlmprad_gwd
 
@@ -65,6 +65,7 @@ export OUTPUT_FILE="'nemsio'"
 export WRITE_NEMSIOFLIP=.true.
 export WRITE_FSYNCFLAG=.true.
 
+export CCPP_SUITE=FV3_GFS_2017_gfdlmp
 export INPUT_NML=gfdlmp.nml.IN
 export FV3_RUN=gfdlmp_run.IN
 

@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 control test
+#  FV3 CCPP control test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 control results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP control results with previous trunk version"
 
 export CNTL_DIR=fv3_stretched_nest_quilt
 export LIST_FILES="  atmos_4xdaily.tile1.nc \
@@ -13,7 +13,7 @@ export LIST_FILES="  atmos_4xdaily.tile1.nc \
                      atmos_4xdaily.tile4.nc \
                      atmos_4xdaily.tile5.nc \
                      atmos_4xdaily.tile6.nc \
-                    atmos_4xdaily.nest02.nc \
+              atmos_4xdaily.nest02.tile7.nc \
                                  dynf000.nc \
                                  dynf001.nc \
                                  dynf006.nc \
@@ -99,4 +99,7 @@ export DT_ATMOS="450"
 export INPUT_NML=stretched-nest-input.nml.IN
 export INPUT_NEST02_NML=input_nest02.nml.IN
 export MODEL_CONFIGURE=stretched-nest-quilt-model_configure.IN
-export FV3_RUN=fv3_stretched_run.IN
+export FV3_RUN=stretched_run.IN
+
+export CCPP_SUITE=FV3_GFS_2017_stretched
+

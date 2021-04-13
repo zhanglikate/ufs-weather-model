@@ -12,6 +12,7 @@
        chksum_debug = .false.
        dycore_only = .false.
        fdiag = @[FDIAG]
+       ccpp_suite = '@[CCPP_SUITE]'
 /
 
 &diag_manager_nml
@@ -88,7 +89,7 @@
        hord_mt =  6
        hord_vt =  6
        hord_tm =  6
-       hord_dp =  -6
+       hord_dp =  6
        hord_tr = 8
        adjust_dry_mass = .F.
        consv_te = 1.
@@ -127,8 +128,8 @@
        pdfcld         = .false.
        fhswr          = 3600.
        fhlwr          = 3600.
-       ialb           = 1
-       iems           = 1
+       ialb           = @[IALB]
+       iems           = @[IEMS]
        IAER           = 111
        ico2           = 2
        isubc_sw       = 2
@@ -143,6 +144,10 @@
        dspheat        = .true.
        hybedmf        = @[HYBEDMF]
        satmedmf       = @[SATMEDMF]
+       do_myjsfc      = @[DO_MYJSFC]
+       do_myjpbl      = @[DO_MYJPBL]
+       shinhong       = @[SHINHONG]
+       do_ysu         = @[DO_YSU]
        lheatstrg      = @[LHEATSTRG]
        lgfdlmprad     = @[LGFDLMPRAD]
        effr_in        = @[EFFR_IN]
@@ -150,7 +155,9 @@
        trans_trac     = .false.
        cnvcld         = .true.
        imfshalcnv     = @[IMFSHALCNV]
+       hwrf_samfshal  = @[HWRF_SAMFSHAL]
        imfdeepcnv     = @[IMFDEEPCNV]
+       hwrf_samfdeep  = @[HWRF_SAMFDEEP]
        cdmbgwd        = 3.5,0.25
        prslrd0        = 0.
        ivegsrc        = 1
@@ -169,6 +176,8 @@
        iopt_tbot      = 2
        iopt_stc       = 1
        debug          = .false.
+       oz_phys        = @[OZ_PHYS_OLD]
+       oz_phys_2015   = @[OZ_PHYS_NEW]
        h2o_phys       = @[H2O_PHYS]
        nstf_name      = @[NSTF_NAME]
        iau_drymassfixer = @[IAU_DRYMASSFIXER]
@@ -178,6 +187,11 @@
        xkzminv        = 0.3
        xkzm_m         = 1.0
        xkzm_h         = 1.0
+       do_sppt        = @[DO_SPPT]
+       do_shum        = @[DO_SHUM]
+       do_skeb        = @[DO_SKEB]
+       lndp_type      = @[LNDP_TYPE]
+       n_var_lndp     = @[N_VAR_LNDP]
 /
 
 &gfdl_cloud_microphysics_nml
@@ -263,7 +277,7 @@
        FNVETC   = "global_vegtype.igbp.t126.384.190.rg.grb",
        FNSOTC   = "global_soiltype.statsgo.t126.384.190.rg.grb",
        FNSMCC   = "global_soilmgldas.t126.384.190.grb",
-       FNMSKH   = "seaice_newland.grb",
+       FNMSKH   = "global_slmask.t1534.3072.1536.grb",
        FNTSFA   = "",
        FNACNA   = "",
        FNSNOA   = "",

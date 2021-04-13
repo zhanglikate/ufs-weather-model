@@ -12,6 +12,7 @@
        chksum_debug = .false.
        dycore_only  = .false.
        fdiag        = @[FDIAG]
+       ccpp_suite = '@[CCPP_SUITE]'
 /
 
 &diag_manager_nml
@@ -87,7 +88,7 @@
        hord_mt  =  6
        hord_vt  =  6
        hord_tm  =  6
-       hord_dp  = -6
+       hord_dp  =  6
        hord_tr  = 13
        adjust_dry_mass = .F.
        consv_te   = 1.
@@ -151,7 +152,7 @@
        cal_pre        = .false.
        redrag         = .true.
        dspheat        = .false.
-       hybedmf        = @[HYBEDMF]
+       hybedmf        = .false.
        satmedmf       = .false.
        lheatstrg      = @[LHEATSTRG]
        random_clds    = .true.
@@ -208,6 +209,8 @@
        max_lat        = 4000
        rhcmax         = 0.9999999
        effr_in        = .true.
+       oz_phys        = .false.
+       oz_phys_2015   = .true.
 
        nstf_name      = @[NSTF_NAME]
        iau_delthrs    = 6
@@ -233,7 +236,7 @@
        FNVETC   = @[FNVETC]
        FNSOTC   = @[FNSOTC]
        FNSMCC   = @[FNSMCC]
-       FNMSKH   = "seaice_newland.grb",
+       FNMSKH   = "global_slmask.t1534.3072.1536.grb",
        FNTSFA   = "",
        FNACNA   = "",
        FNSNOA   = "",

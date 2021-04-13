@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 H2O physics test
+#  FV3 CCPP H2O physics test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 H2O physics results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP H2O physics results with previous trunk version"
 
 export CNTL_DIR=fv3_h2ophys
 
@@ -74,8 +74,9 @@ export LIST_FILES="atmos_4xdaily.tile1.nc \
 
 export_fv3
 
-export FV3_RUN=fv3_run.IN
-export INPUT_NML=input.nml.IN
+export FV3_RUN=control_run.IN
+export CCPP_SUITE=FV3_GFS_2017_h2ophys
+export INPUT_NML=control.nml.IN
 
 export H2O_PHYS=.T.
 

@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 control test
+#  FV3 CCPP control test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 control results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP control results with previous trunk version"
 
 export CNTL_DIR=fv3_stretched_nest
 export LIST_FILES="  atmos_4xdaily.tile1.nc \
@@ -13,21 +13,21 @@ export LIST_FILES="  atmos_4xdaily.tile1.nc \
                      atmos_4xdaily.tile4.nc \
                      atmos_4xdaily.tile5.nc \
                      atmos_4xdaily.tile6.nc \
-                    atmos_4xdaily.nest02.nc \
+              atmos_4xdaily.nest02.tile7.nc \
                      fv3_history2d.tile1.nc \
                      fv3_history2d.tile2.nc \
                      fv3_history2d.tile3.nc \
                      fv3_history2d.tile4.nc \
                      fv3_history2d.tile5.nc \
                      fv3_history2d.tile6.nc \
-                    fv3_history2d.nest02.nc \
+              fv3_history2d.nest02.tile7.nc \
                        fv3_history.tile1.nc \
                        fv3_history.tile2.nc \
                        fv3_history.tile3.nc \
                        fv3_history.tile4.nc \
                        fv3_history.tile5.nc \
                        fv3_history.tile6.nc \
-                      fv3_history.nest02.nc \
+                fv3_history.nest02.tile7.nc \
                         RESTART/coupler.res \
                      RESTART/fv_core.res.nc \
               RESTART/fv_core.res.nest02.nc \
@@ -101,7 +101,9 @@ QUILTING=.false.
 
 export INPUT_NML=stretched-nest-input.nml.IN
 export INPUT_NEST02_NML=input_nest02.nml.IN
-export FV3_RUN=fv3_stretched_run.IN
+export FV3_RUN=stretched_run.IN
+
+export CCPP_SUITE=FV3_GFS_2017_stretched
 
 if [[ $MACHINE_ID = *.gnu ]]; then
   export WLCLK=30

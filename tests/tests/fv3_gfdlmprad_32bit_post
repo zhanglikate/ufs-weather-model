@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 GFDL-MPrad test
+#  FV3 CCPP GFDL-MPrad inline post test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 GFDL-MP radiation interaction option with the control"
+export TEST_DESCR="Compare FV3 CCPP GFDL-MP radiation interaction / inline post option with the control"
 
 export CNTL_DIR=fv3_gfdlmprad_32bit_post
 
@@ -66,10 +66,11 @@ export OUTPUT_GRID="'gaussian_grid'"
 export OUTPUT_FILE="'nemsio'"
 export OUTPUT_HISTORY=.true.
 export WRITE_DOPOST=.true.
+export POSTAPP='global'
 export WRITE_NEMSIOFLIP=.true.
 export WRITE_FSYNCFLAG=.true.
 
-
+export CCPP_SUITE=FV3_GFS_2017_gfdlmp
 export INPUT_NML=gfdlmp.nml.IN
 export FV3_RUN=gfdlmp_run.IN
 

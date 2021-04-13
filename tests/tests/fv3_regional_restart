@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 regional restart test
+#  FV3 CCPP regional restart test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 regional restart results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP regional restart results with previous trunk version"
 
 export CNTL_DIR=fv3_regional_restart
 
@@ -17,8 +17,16 @@ export_fv3
 export TASKS=24
 export WARM_START=.T.
 
-export FV3_RUN=fv3_regional_run.IN
+export FV3_RUN=regional_run.IN
 
+export OZ_PHYS_OLD=.F.
+export OZ_PHYS_NEW=.T.
+export H2O_PHYS=.T.
+export HYBEDMF=.F.
+export QUILTING=.false.
+export MODEL_CONFIGURE=model_configure_regional.IN
+
+export CCPP_SUITE=FV3_GFS_v15_thompson_mynn
 export INPUT_NML=regional.nml.IN
 
 export FDIAG=3

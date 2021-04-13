@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 GFDL-MPrad Noah MP test
+#  FV3 CCPP GFDL-MPrad Noah MP test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 GFDL-MP radiation interaction and Noah MP with the control"
+export TEST_DESCR="Compare FV3 CCPP GFDL-MP radiation interaction and Noah MP option with the control"
 
 export CNTL_DIR=fv3_gfdlmprad_noahmp
 
@@ -59,13 +59,17 @@ export LGFDLMPRAD=.true.
 export EFFR_IN=.true.
 export LSM=2
 export LANDICE=.false.
+export LHEATSTRG=.false.
+export IALB=2
+export IEMS=2
+
 
 export OUTPUT_GRID="'gaussian_grid'"
 export OUTPUT_FILE="'nemsio'"
 export WRITE_NEMSIOFLIP=.true.
 export WRITE_FSYNCFLAG=.true.
 
-
+export CCPP_SUITE=FV3_GFS_2017_gfdlmp_noahmp
 export INPUT_NML=gfdlmp.nml.IN
 export FV3_RUN=gfdlmp_run.IN
 

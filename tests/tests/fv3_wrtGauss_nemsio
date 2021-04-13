@@ -1,10 +1,10 @@
 ###############################################################################
 #
-#  FV3 Gaussian grid nemsio output test
+#  FV3 CCPP Gaussian grid nemsio output test
 #
 ###############################################################################
 
-export TEST_DESCR="Compare FV3 Gaussian grid nemsio output results with previous trunk version"
+export TEST_DESCR="Compare FV3 CCPP Gaussian grid nemsio output results with previous trunk version"
 
 export CNTL_DIR=fv3_wrtGauss_nemsio
 
@@ -58,4 +58,8 @@ export OUTPUT_GRID="'gaussian_grid'"
 export OUTPUT_FILE="'nemsio'"
 export WRITE_NEMSIOFLIP=.true.
 export WRITE_FSYNCFLAG=.true.
+
+export FV3_RUN=control_run.IN
+export CCPP_SUITE=FV3_GFS_2017
+export INPUT_NML=control.nml.IN
 
