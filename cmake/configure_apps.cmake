@@ -13,16 +13,14 @@
 ###############################################################################
 ### Configure Application Components
 ###############################################################################
-if(APP MATCHES "^(ATM|ATMW|ATMC)$")
+if(APP MATCHES "^(ATM|ATMW)$")
   set(FMS        ON  CACHE BOOL "Enable FMS"                 FORCE)
   set(FV3        ON  CACHE BOOL "Enable FV3"                 FORCE)
   set(STOCH_PHYS ON  CACHE BOOL "Enable Stochastic Physics"  FORCE)
+  set(GOCART     ON  CACHE BOOL "Enable GOCART Chemistry"    FORCE)
   if(APP MATCHES "ATMW")
     set(WW3      ON  CACHE BOOL "Enable WAVEWATCH III"       FORCE)
     message("Configuring UFS app in Atmosphere with Waves mode")
-  elseif(APP MATCHES "ATMC")
-    set(GOCART   ON  CACHE BOOL "Enable GOCART Chemistry"    FORCE)
-    message("Configuring UFS app in Atmosphere with GOCART Chemistry")
   else()
     message("Configuring UFS app in Atmosphere Only mode")
   endif()

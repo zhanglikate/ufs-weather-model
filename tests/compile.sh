@@ -143,10 +143,6 @@ if [[ "${MAKE_OPT}" == *"APP=ATMW"* ]]; then
     CMAKE_FLAGS="${CMAKE_FLAGS} -DAPP=ATMW"
 fi
 
-if [[ "${MAKE_OPT}" == *"APP=ATMC"* ]]; then
-    CMAKE_FLAGS="${CMAKE_FLAGS} -DAPP=ATMC"
-fi
-
 if [[ "${MAKE_OPT}" == *"APP=S2S"* ]]; then
     CMAKE_FLAGS="${CMAKE_FLAGS} -DAPP=S2S -DMOM6SOLO=ON"
 fi
