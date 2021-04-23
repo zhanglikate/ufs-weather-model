@@ -105,6 +105,7 @@ message("STOCH_PHYS ....... ${STOCH_PHYS}")
 message("NEMSdatm ......... ${NEMSdatm}")
 message("CDEPS ............ ${CDEPS}")
 message("CMEPS ............ ${CMEPS}")
+message("GOCART ........... ${GOCART}")
 
 # Options that applications reset
 message("32BIT ............ ${32BIT}")
@@ -230,18 +231,7 @@ endif()
 ### Chemistry Components [GOCART]
 ###############################################################################
 if(GOCART)
-    # this will look for MAPL ?
-  #set(BUILD_UFS ON CACHE BOOL "Enable UFS build of GOCART")
-  #add_subdirectory(gocart)
-  list(APPEND _gocart_srcs gocart/Process_Library/Chem_MieTableMod2G.F90
-                           gocart/Process_Library/GOCART2G_Process.F90)
-  add_library(gocart ${_gocart_srcs})
-  target_compile_definitions(gocart PRIVATE "HAS_NETCDF3")
-  #set_target_properties(gocart PROPERTIES Fortran_MODULE_DIRECTORY
-  #                                        ${CMAKE_CURRENT_BINARY_DIR}/mod)
-  #target_include_directories(gocart PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/NEMS/src)
-  #target_include_directories(ufs INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/mod>
-  #                                         $<INSTALL_INTERFACE:mod>)
+  add_subdirectory(gocart-interface)
 endif()
 
 ###############################################################################

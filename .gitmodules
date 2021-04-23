@@ -19,7 +19,7 @@
   url = https://github.com/noaa-gsl/stochastic_physics
   branch = gsl/develop
 [submodule "gocart"]
-  path = gocart
+  path = gocart-interface/gocart
   url = https://github.com/NOAA-GSL/GOCART
   branch = gsl/develop-chem
 [submodule "CMakeModules"]
