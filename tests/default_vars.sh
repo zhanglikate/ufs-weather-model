@@ -466,6 +466,10 @@ export CA_GLOBAL=.F.
 
 export IAU_DRYMASSFIXER=.false.
 
+# Chemistry variables:
+export GSD_CHEM=.F. # must be .F. or .T.
+export DO_SPPT_EMIS=.F.
+
 # Regional
 export WRITE_RESTART_WITH_BCS=.false.
 

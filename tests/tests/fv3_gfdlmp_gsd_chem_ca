@@ -59,6 +59,7 @@ export OUTPUT_GRID="'gaussian_grid'"
 export OUTPUT_FILE="'nemsio'"
 export WRITE_NEMSIOFLIP=.true.
 export WRITE_FSYNCFLAG=.true.
+export GSD_CHEM=.T.
 
 export TRANS_TRAC=.T.
 export CPLCHM=.T.
