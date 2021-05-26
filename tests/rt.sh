@@ -240,10 +240,13 @@ elif [[ $MACHINE_ID = hera.* ]]; then
   QUEUE=batch
   COMPILE_QUEUE=batch
 
-  #ACCNR=fv3-cpu
+  ACCNR=gsd-fv3
   PARTITION=
-  dprefix=/scratch1/NCEPDEV
-  DISKNM=$dprefix/nems/emc.nemspara/RT
+  #dprefix=/scratch1/NCEPDEV
+  dprefix=/scratch1/BMC/gsd-fv3-dev/lzhang/EMC_FV3
+  #DISKNM=$dprefix/nems/emc.nemspara/RT
+  DISKNM=/scratch1/NCEPDEV/nems/emc.nemspara/RT
+  #DISKNM=/scratch1/NCEPDEV/stmp4/Dom.Heinzeller/FV3_RT
   STMP=$dprefix/stmp4
   PTMP=$dprefix/stmp2
 
