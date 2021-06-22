@@ -122,6 +122,29 @@ deflate_level=1
 &gfs_physics_nml
   do_sppt      = @[DO_SPPT]
   do_sppt_emis = @[DO_SPPT_EMIS]
+
+do_ca        = @[DO_CA]    ! Main flag to turn on and apply CA
+ca_sgs_emis        = @[CA_SGS_EMIS]    ! Call cellular_automata_sgs_emis
+ca_global          = .False.  ! Call cellular_automata_global
+nca                = 4 ! Number of CA’s to be run
+ncells             = 8 ! CA grid setting, e.g 5 = 5x5 times the resolution of the FV3 grid
+nlives             = 50 ! A “newborn” cell gets assigned nlives*condition/max(condition) 
+nseed              = 1 ! Seed the CA with new cells every nseed timestep
+nfracseed          = 0.5 ! distribution of CA cells at initial time - 0.5 = half the grid will have value 1
+nthresh            = 8 ! Convection specific setting
+ca_trigger         = .False. ! Apply CA on convective triggering
+ca_entr            = .False. ! Apply CA on convective entrainment
+ca_closure         = .False. ! Apply CA on convective closure
+nca_g              = 1 ! only applies if ca_global = true
+ncells_g           = 1 ! only applies if ca_global = true
+nlives_g           = 100 ! only applies if ca_global = true
+nseed_g            = 100 ! only applies if ca_global = true
+ca_smooth          = .True. ! only applies if ca_global = true
+nspinup            = 100 ! spin up of CA - I recommend spinning the CA up at least 100 iterations
+iseed_ca           = 12345 ! seed for random number generator for initial CA grid
+nsmooth            = 100 ! only applies if ca_global and ca_smooth = true
+ca_amplitude   = 0.35 ! only applies if ca_global = true
+
   fhzero       = 6
   h2o_phys     = .true.
   ldiag3d      = .false.

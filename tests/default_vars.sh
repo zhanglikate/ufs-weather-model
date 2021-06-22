@@ -468,6 +468,7 @@ export IAU_DRYMASSFIXER=.false.
 
 # Chemistry variables:
 export GSD_CHEM=.F. # must be .F. or .T.
+export CA_SGS_EMIS=.F.
 export DO_SPPT_EMIS=.F.
 
 # Regional
