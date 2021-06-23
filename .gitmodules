@@ -20,10 +20,8 @@
   branch = gsl/develop-chem
 [submodule "gocart"]
   path = gocart-interface/gocart
-  #url = https://github.com/NOAA-GSL/GOCART
-  #branch = gsl/develop-chem
-  url = https://github.com/climbfuji/GOCART
-  branch = dont_use_realstarteight
+  url = https://github.com/NOAA-GSL/GOCART
+  branch = gsl/develop-chem
 [submodule "CMakeModules"]
   path = CMakeModules
   url = https://github.com/NOAA-EMC/CMakeModules
