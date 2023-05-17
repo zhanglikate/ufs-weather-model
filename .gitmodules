@@ -38,9 +38,9 @@
   path = GOCART
   url = https://github.com/GEOS-ESM/GOCART
   branch = develop
-[submodule "UFS-Chem"]
-	path = UFS-Chem
-	url = https://github.com/zhanglikate/UFS-Chem.git
+[submodule "CATChem"]
+	path = CATChem
+	url = https://github.com/zhanglikate/CATChem.git
   branch = p8-ufs-ccpp-chem
 [submodule "AQM"]
   path = AQM
