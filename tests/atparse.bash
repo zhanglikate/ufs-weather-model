@@ -13,7 +13,7 @@ function atparse {
             echo "ERROR: Ignoring invalid argument $__text\n" 1>&2
         fi
     done
-    while IFS= read -r __text ; do
+    while IFS= read -r __text || [ -n "$__text" ]; do
         while [[ "$__text" =~ ^([^@]*)(@\[[a-zA-Z_][a-zA-Z_0-9]*\]|@\[\'[^\']*\'\]|@\[@\]|@)(.*) ]] ; do
             __before="${BASH_REMATCH[1]}"
             __during="${BASH_REMATCH[2]}"
