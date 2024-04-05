@@ -45,7 +45,7 @@
 [submodule "CATChem"]
   path = CATChem
   url = https://github.com/zhanglikate/CATChem.git
-  branch = gsl-updates
+  branch = thom-cat
 [submodule "NOAHMP"]
   path = NOAHMP-interface/noahmp
   url = https://github.com/NOAA-EMC/noahmp
