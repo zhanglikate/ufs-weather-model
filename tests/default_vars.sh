@@ -375,10 +375,11 @@ else
 
 fi
 
-export WLCLK_dflt=30
+export WLCLK_dflt=60
 
 export WLCLK=${WLCLK_dflt}
 export CMP_DATAONLY=false
+export WETDEP_LS_CPL=1
 export nccmp_exclude=""
 export nccmp_exclude_attr=""
 
@@ -733,7 +734,6 @@ export_gfs_physics ()
     export BETASCU=8.0
     export BETAMCU=1.0
     export BETADCU=2.0
-
     # Aerosol convective scavenging
     export FSCAV_AERO='"*:0.3","so2:0.0","msa:0.0","dms:0.0","nh3:0.4","nh4:0.6","bc1:0.6","bc2:0.6","oc1:0.4","oc2:0.4","dust1:0.6","dust2:0.6","dust3:0.6","dust4:0.6","dust5:0.6","seas1:0.5","seas2:0.5","seas3:0.5","seas4:0.5","seas5:0.5"'
 
